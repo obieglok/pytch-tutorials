@@ -21,9 +21,9 @@ class WhiteKey(pytch.Sprite):
 
     @pytch.when_this_sprite_clicked
     def keyClicked(self):
-        self.switch_costume(1)
+        self.switch_costume(self.index+7)
         self.play_sound_until_done(self.sound)
-        self.switch_costume(0)
+        self.switch_costume(self.index)
 
 
 class Song(pytch.Sprite):
