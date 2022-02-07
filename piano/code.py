@@ -92,9 +92,20 @@ class Song(pytch.Sprite):
         if self.index == 0:
             self.say_for_seconds("Let's play Happy Birthday!", 3)
             pytch.broadcast("HappyBirthday")
+            self.hideOrShow(True);
         if self.index == 1:
             self.say_for_seconds("Let's play Jingle Bells!", 3)
             pytch.broadcast("JingleBells")
+            self.hideOrShow(True);
+
+    def hideOrShow(self, hide):
+        Songs = Song.all_clones();
+        if hide == True:
+            for i in range(2):
+                Songs[i].hide();
+        if hide == False:
+            for i in range(2):
+                Songs[i].show();
 
 
 class BlackKey(pytch.Sprite):
