@@ -80,6 +80,16 @@ class WhiteKey(pytch.Sprite):
         Notes =[4,4,5,4,0,6,-1,4,4,5,4,1,0,-1,4,4,4,2,0,6,5,-1,3,3,2,0,1,0]
         self.Notes = "GGAGCB-GGAGDC-GGGECBA-FFECDC"
         pytch.show_variable(self,"Notes", label="Notes:")
+        for i in range (28):
+            if Notes[i] == -1 :
+                self.say_for_seconds("-", 0.5)
+            else :
+                Keys[Notes[i]].switch_costume(Notes[i]+7);
+                self.start_sound(self.SoundNames[Notes[i]]);
+                Keys[Notes[i]].say_for_seconds(self.Notes[i], 1)
+                Keys[Notes[i]].switch_costume(Notes[i]);
+        pytch.hide_variable(self,"Notes")
+        Song.hideOrShow(self,False)
 
 class Song(pytch.Sprite):
     Costumes = ["Cake.png","JingleBells.png",]
