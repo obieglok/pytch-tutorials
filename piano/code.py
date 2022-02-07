@@ -4,7 +4,7 @@ class Room(pytch.Stage):
     Backdrops = ["music-room.jpg"]
 
 class WhiteKey(pytch.Sprite):
-    Costumes = ["C.png","C2.png"]
+    Costumes = ["C.png", "D.png","E.png", "F.png","G.png", "A.png", "B.png", "C2.png", "D2.png","E2.png","F2.png", "G2.png","A2.png","B2.png"]
     Sounds = ["C6Sound.mp3"]
     SoundNames = ["C6Sound"]
 
