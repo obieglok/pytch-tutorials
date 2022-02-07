@@ -5,8 +5,8 @@ class Room(pytch.Stage):
 
 class WhiteKey(pytch.Sprite):
     Costumes = ["C.png", "D.png","E.png", "F.png","G.png", "A.png", "B.png", "C2.png", "D2.png","E2.png","F2.png", "G2.png","A2.png","B2.png"]
-    Sounds = ["C6Sound.mp3"]
-    SoundNames = ["C6Sound"]
+    Sounds = ["C6Sound.mp3","D6Sound.mp3","C6Sound.mp3","F6Sound.mp3","G6Sound.mp3", "A6Sound.mp3", "B6Sound.mp3"]
+    SoundNames = ["C6Sound","D6Sound","C6Sound","F6Sound","G6Sound","A6Sound", "B6Sound"]
 
     @pytch.when_green_flag_clicked
     def start(self):
