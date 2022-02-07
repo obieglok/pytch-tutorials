@@ -87,6 +87,15 @@ class Song(pytch.Sprite):
             pytch.create_clone_of(self)
         self.hide();
 
+    @pytch.when_this_sprite_clicked
+    def playSong(self):
+        if self.index == 0:
+            self.say_for_seconds("Let's play Happy Birthday!", 3)
+            pytch.broadcast("HappyBirthday")
+        if self.index == 1:
+            self.say_for_seconds("Let's play Jingle Bells!", 3)
+            pytch.broadcast("JingleBells")
+
 
 class BlackKey(pytch.Sprite):
     Costumes =["BlackKey.png"]
