@@ -10,10 +10,14 @@ class WhiteKey(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def start(self):
-    	self.switch_costume(0)
-    	self.go_to_xy(-100,0)
-    	self.set_size(0.3)
-    	self.sound = self.SoundNames[0]
+    	for i in range(7):
+            self.index = i;
+            self.sound = self.SoundNames[i]
+            self.switch_costume(i)
+            self.go_to_xy(-100 + i*28,0)
+            self.set_size(0.3)
+            pytch.create_clone_of(self)
+        self.hide()
 
     @pytch.when_this_sprite_clicked
     def keyClicked(self):
