@@ -93,6 +93,10 @@ class BlackKey(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def start(self):
-        self.switch_costume(0)
-        self.go_to_xy(-85,27)
-        self.set_size(0.3)
+        for i in range(6):
+            if i != 2 :
+                self.switch_costume(0)
+                self.go_to_xy(-85 + i*28,27)
+                self.set_size(0.3)
+                pytch.create_clone_of(self)
+        self.hide()
