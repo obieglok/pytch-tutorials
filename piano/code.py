@@ -74,6 +74,13 @@ class WhiteKey(pytch.Sprite):
             self.play_sound_until_done(self.sound)
             self.switch_costume(self.index)
 
+    @pytch.when_I_receive("HappyBirthday")
+    def playHappyBirthday(self):
+        Keys = WhiteKey.all_clones();
+        Notes =[4,4,5,4,0,6,-1,4,4,5,4,1,0,-1,4,4,4,2,0,6,5,-1,3,3,2,0,1,0]
+        self.Notes = "GGAGCB-GGAGDC-GGGECBA-FFECDC"
+        pytch.show_variable(self,"Notes", label="Notes:")
+
 class Song(pytch.Sprite):
     Costumes = ["Cake.png","JingleBells.png",]
 
