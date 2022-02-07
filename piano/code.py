@@ -25,6 +25,12 @@ class WhiteKey(pytch.Sprite):
         self.play_sound_until_done(self.sound)
         self.switch_costume(self.index)
 
+    @pytch.when_key_pressed("a")
+    def keyC(self):
+        if self.index == 0:
+            self.switch_costume(self.index+7)
+            self.play_sound_until_done(self.sound)
+            self.switch_costume(self.index)
 
 class Song(pytch.Sprite):
     Costumes = ["Cake.png","JingleBells.png",]
