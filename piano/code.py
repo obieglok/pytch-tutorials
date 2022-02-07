@@ -91,6 +91,23 @@ class WhiteKey(pytch.Sprite):
         pytch.hide_variable(self,"Notes")
         Song.hideOrShow(self,False)
 
+    @pytch.when_I_receive("JingleBells")
+    def playJingleBells(self):
+        Keys = WhiteKey.all_clones();
+        Notes = [2,2,2,-1,2,2,2,-1,2,4,0,1,2,-1,3,3,3,3,3,2,2,2,2,1,1,2,2,1,-1,4,-1,2,2,2,-1,2,2,2,-1,2,4,0,1,2,-1,4,4,4,4,4,2,2,2,4,4,3,1,0]
+        self.Notes = "EEE-EEE-EGCDE-FFFFFEEEEDDEED-G-EEE-EEE-EGCDE-GGGGGEEEGGFDC"
+        pytch.show_variable(self,"Notes",label="Notes:")
+        for i in range (58):
+            if Notes[i] == -1 :
+                self.say_for_seconds("-", 0.5)
+            else :
+                Keys[Notes[i]].switch_costume(Notes[i]+7);
+                self.start_sound(self.SoundNames[Notes[i]]);
+                Keys[Notes[i]].say_for_seconds(self.Notes[i], 1)
+                Keys[Notes[i]].switch_costume(Notes[i]);
+        pytch.hide_variable(self,"Notes")
+        Song.hideOrShow(self,False)
+
 class Song(pytch.Sprite):
     Costumes = ["Cake.png","JingleBells.png",]
 
